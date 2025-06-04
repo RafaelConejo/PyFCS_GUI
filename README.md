@@ -28,6 +28,13 @@ If no modifications to the source code are needed, follow these steps for a quic
 
 ---
 
+### 📖 Interface Manual
+
+A complete manual explaining the use of the GUI, including examples and step-by-step guides, is available in the following folder of the repository:  
+🔗 [PyFCS_GUI_Manual](https://github.com/RafaelConejo/PyFCS_GUI/tree/main/PyFCS_GUI_Manual)
+
+---
+
 ### 📬 Contact & Support
 For support or questions, feel free to contact: rafaconejo@ugr.es
 
