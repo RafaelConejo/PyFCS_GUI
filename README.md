@@ -6,6 +6,16 @@ The GUI enhances usability by offering a practical way to apply fuzzy color mode
 
 ---
 
+### 📁 Repository Structure and Component Distribution
+The main components of this repository are organized as follows:
+
+- **`PyFCS/`** – Core source code of the application, including all GUI logic and fuzzy color space handling.
+- **`PyFCS_GUI_Manual/`** – User manual with detailed instructions, explanations of functionality, and usage examples.
+- **`fuzzy_color_spaces/`** – Contains pre-generated fuzzy color spaces for testing and demonstration purposes.
+- **`image_test/`** – Collection of sample images used for testing and evaluation.
+
+---
+
 ### 🔧 How to Use
 
 If no modifications to the source code are needed, follow these steps for a quick installation on **Windows**:
@@ -25,6 +35,13 @@ If no modifications to the source code are needed, follow these steps for a quic
     ```bash
     python PyFCS\visualization\basic_structure.py
     ```
+
+---
+
+### 📖 Interface Manual
+
+A complete manual explaining the use of the GUI, including examples and step-by-step guides, is available in the following folder of the repository:  
+🔗 [PyFCS_GUI_Manual](https://github.com/RafaelConejo/PyFCS_GUI/tree/main/PyFCS_GUI_Manual)
 
 ---
 
