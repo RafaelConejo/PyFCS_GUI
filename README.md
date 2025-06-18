@@ -18,63 +18,62 @@ The main components of this repository are organized as follows:
 
 ### 🔧 How to Use
 
-If no modifications to the source code are needed, follow these steps for a quick installation:
+If you don't need to modify the source code, follow the steps below for a quick installation based on your operating system.
 
-#### 📦 1. Download the Project
+---
 
-Access the project repository on GitHub and download the library using the **"Clone or Download"** button, or from the **Releases** section by downloading the `.zip` file.
+#### 📥 1. Download the Project
 
-Extract the contents of the `.zip` file to a preferred local folder.
+Download the repository from GitHub using the **"Clone or Download"** button or from the **Releases** section as a `.zip` file.  
+Extract the contents to a local folder of your choice.
 
-#### 🐍 2. Make Sure Python is Installed
+### 💻 Installation by Operating System
 
-Ensure you have **Python 3.9 or higher** installed, along with **pip**. You can also use a virtual environment manager like [Anaconda](https://www.anaconda.com/).
+#### 🪟 Windows
 
-If `pip` is not available, you can install it manually with:
+Make sure you have **Python 3.9 or higher** installed, along with **pip**.
 
-  ```bash
-  python -m ensurepip --upgrade
-  ```
+If `pip` is missing, you can install it with:
 
-#### </> 3. Open a terminal, navigate to the root directory of the project, and install the required dependencies:
+```bash
+python -m ensurepip --upgrade
+```
 
-  - **🪟 Windows**
-    ```bash
-    pip install -r PyFCS\external\requirements.txt
+Then, install the required Python dependencies and launch the interface:
 
-    # Once the dependencies are installed, launch the main interface structure by executing:
-    python PyFCS\visualization\basic_structure.py
-    ```
+```bash
+pip install -r PyFCS\external\requirements.txt
 
-  - **🐧 Linux**
-    ```bash
-    python3 -m venv venv_pyfcs
-    source venv_pyfcs/bin/activate
-    python3 -m pip install -r PyFCS/external/requirements.txt
+python PyFCS\visualization\main_structure.py
+```
 
-    # Install system dependencies (required manually)
-    sudo apt install python3.12-tk
-    python3 -m pip install PyQtWebEngine
+---
 
-    # Launch the interface
-    python3 PyFCS/visualization/basic_structure.py
-    ```
+#### 🐧 Linux
 
-    These steps ensure full compatibility with features such as Tkinter-based dialogs and enhanced Qt-based rendering on Linux systems.
+```bash
+# Make the setup script executable (only once)
+chmod +x ./PyFCS/external/setup_pyfcs_linux.sh
 
-  - **🍎 macOS**
-    ```bash
-    python3 -m venv venv_pyfcs
-    source venv_pyfcs/bin/activate
-    python3 -m pip install -r PyFCS/external/requirements.txt
+# Run the setup script and launch the interface with:
+./PyFCS/external/setup_pyfcs_linux.sh
+```
 
-    # (If needed) Install Tkinter via Homebrew
-    brew install python-tk
+> 💡 The script creates a virtual environment, installs Python dependencies, and handles system packages like `tkinter`.
 
-    # Launch the interface
-    python3 PyFCS/visualization/basic_structure.py
-    ```
+---
 
+#### 🍎 macOS
+
+```bash
+# Make the setup script executable (only once)
+chmod +x ./PyFCS/external/setup_pyfcs_mac.sh
+
+# Run the setup script and launch the interface with:
+./PyFCS/external/setup_pyfcs_mac.sh
+```
+
+> 💡 This script uses Homebrew to install Python (if needed), ensures `tkinter` works, and configures everything automatically.
 ---
 
 ### 📖 Interface Manual
