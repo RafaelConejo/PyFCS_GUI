@@ -1133,6 +1133,7 @@ class PyFCSApp:
                     self.filtered_points
                 )
 
+        # Mac solution (check privileges)
         file_path = os.path.abspath(os.path.join(os.getcwd(), 'PyFCS', 'external', 'temp_plot.html'))
         fig.write_html(file_path)
         file_path = file_path.replace("\\", "/")  # Correct solution
