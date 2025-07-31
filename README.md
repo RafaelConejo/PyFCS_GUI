@@ -4,6 +4,9 @@
 
 The GUI enhances usability by offering a practical way to apply fuzzy color models, which are grounded in fuzzy logic and conceptual space theory, building upon previous developments like the JFCS Java library.
 
+A complete manual explaining the use of the GUI, including examples and step-by-step guides, is available in the following folder of the repository:  
+🔗 [PyFCS_GUI_Manual](https://github.com/RafaelConejo/PyFCS_GUI/tree/main/PyFCS_GUI_Manual)
+
 ---
 
 ## User Experience Evaluation
@@ -85,12 +88,6 @@ chmod +x ./PyFCS/external/setup_pyfcs_mac.sh
 ```
 
 > 💡 This script uses Homebrew to install Python (if needed), ensures `tkinter` works, and configures everything automatically.
----
-
-### 📖 Interface Manual
-
-A complete manual explaining the use of the GUI, including examples and step-by-step guides, is available in the following folder of the repository:  
-🔗 [PyFCS_GUI_Manual](https://github.com/RafaelConejo/PyFCS_GUI/tree/main/PyFCS_GUI_Manual)
 
 ---
 
