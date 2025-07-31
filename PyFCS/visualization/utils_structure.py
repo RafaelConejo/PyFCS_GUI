@@ -282,7 +282,7 @@ def get_proto_percentage(prototypes, image, fuzzy_color_space, selected_option, 
 
 
 
-def get_fuzzy_color_space(image, threshold=0.5, min_samples=160):
+def get_fuzzy_color_space(image, FIRST_DBSCAN, threshold=0.5, min_samples=160, min_limit=10, step=10):
     """
     Detects the main colors in an image using DBSCAN clustering and triggers a callback with the detected colors.
 
@@ -292,6 +292,13 @@ def get_fuzzy_color_space(image, threshold=0.5, min_samples=160):
         min_samples: Int, minimum number of points to form a cluster.
         display_callback: Callable, function to execute with the detected colors.
     """
+        
+    # if threshold <= 0.35:
+    #     threshold = 0.25
+    # elif threshold >= 0.65:
+    #     threshold = 0.85
+    # else:
+    threshold = 0.85
     # Convert image to numpy array
     img_np = np.array(image)
 
@@ -327,8 +334,14 @@ def get_fuzzy_color_space(image, threshold=0.5, min_samples=160):
 
         colors.append({"rgb": tuple(mean_color_rgb), "lab": tuple(mean_color_lab)})
 
+    # Retry logic if no colors found
+    if FIRST_DBSCAN:
+        if not colors and min_samples > min_limit:
+            print(f"[DEBUG] No colors found, retrying with min_samples={min_samples - step}")
+            return get_fuzzy_color_space(image, FIRST_DBSCAN, threshold, min_samples - step, min_limit, step)
+
     # Trigger the callback with the detected colors
-    return colors
+    return colors, min_samples
 
 
 

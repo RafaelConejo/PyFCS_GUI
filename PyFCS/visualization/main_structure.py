@@ -37,6 +37,7 @@ class PyFCSApp:
         # Initialize main app variables
         self.root = root
         self.COLOR_SPACE = False  # Flag for managing color spaces
+        self.FIRST_DBSCAN = True  # Flag to the first DBSCAN
         self.ORIGINAL_IMG = {}  # Bool function original image 
         self.MEMBERDEGREE = {}  # Bool function Color Mapping
         self.hex_color = []  # Save points colors for visualization
@@ -1007,6 +1008,7 @@ class PyFCSApp:
             return  # Early return if no images are available
 
         # Create a popup window for image selection
+        self.FIRST_DBSCAN = True
         popup, listbox = utils_structure.create_selection_popup(
             parent=self.image_canvas,
             title="Select an Image",
@@ -2023,14 +2025,14 @@ class PyFCSApp:
             nonlocal threshold, min_samples
             if threshold < 1.0:  
                 threshold = min(threshold + 0.05, 1.0)
-                min_samples = max(15, min_samples - 15)  
+                min_samples = max(10, min_samples - self.step_DBSCAN)  
                 threshold_label.config(text=f"{threshold:.2f}")
 
         def decrease_threshold():
             nonlocal threshold, min_samples
             if threshold > 0.0:  
                 threshold = max(threshold - 0.05, 0.0)
-                min_samples += 15  
+                min_samples += self.step_DBSCAN  
                 threshold_label.config(text=f"{threshold:.2f}")
 
 
@@ -2265,7 +2267,13 @@ class PyFCSApp:
         Adds the source image identifier to each color if it doesn't already exist.
         """
         image = self.images[window_id]
-        colors = utils_structure.get_fuzzy_color_space(image, threshold, min_samples)
+        if self.FIRST_DBSCAN:
+            min_samples=160
+        colors, min_samples = utils_structure.get_fuzzy_color_space(image, self.FIRST_DBSCAN, threshold, min_samples)
+        if self.FIRST_DBSCAN:
+            self.step_DBSCAN = max(1, (min_samples - 10) // 10)
+        self.FIRST_DBSCAN = False
+        
 
         # Add the source image identifier to each color if it doesn't exist
         for id in colors:
@@ -2283,7 +2291,7 @@ class PyFCSApp:
         Adds the source image identifier to each new color if it doesn't already exist.
         """
         if new_window_id and not any(id.get("source_image") == new_window_id for id in colors):
-            new_colors = utils_structure.get_fuzzy_color_space(self.images[new_window_id], threshold, min_samples)
+            new_colors = utils_structure.get_fuzzy_color_space(self.images[new_window_id], self.FIRST_DBSCAN, threshold, min_samples)
 
             # Add the source image identifier to each new color if it doesn't exist
             for id in new_colors:  
