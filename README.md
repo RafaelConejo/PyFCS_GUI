@@ -6,6 +6,16 @@ The GUI enhances usability by offering a practical way to apply fuzzy color mode
 
 ---
 
+## User Experience Evaluation
+
+To assess the usability and perceived quality of the PyFCS GUI, a user study was conducted using the standardized User Experience Questionnaire (UEQ), which evaluates aspects such as **attractiveness**, **efficiency**, **dependability**, and **clarity**. A group of representative users completed the questionnaire after interacting with the software.
+
+The results were **overall positive**, indicating a high level of user satisfaction and providing empirical support for the system’s usability.
+
+The full questionnaire and detailed results are available in the [PyFCS GUI repository](https://forms.gle/pngDqJdYyYyZTRas8).
+
+---
+
 ### 📁 Repository Structure and Component Distribution
 The main components of this repository are organized as follows:
 
