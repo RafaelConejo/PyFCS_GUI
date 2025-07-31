@@ -25,7 +25,7 @@ from PyFCS import Input
 
 
 # Generate a sample palette with synthetic LAB colors
-def generate_sample_palette(n=10):
+def generate_sample_palette(n=50):
     return {
         f"Color_{i}": np.array([i * 10.0, i * 5.0, i * 3.0])
         for i in range(1, n + 1)
