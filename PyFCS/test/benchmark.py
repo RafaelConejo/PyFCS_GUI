@@ -12,6 +12,7 @@ import time
 import tracemalloc
 import os
 import sys
+from skimage import color
 
 # Get the path to the directory containing PyFCS
 current_dir = os.path.dirname(__file__)
@@ -24,6 +25,21 @@ sys.path.append(pyfcs_dir)
 from PyFCS import Input
 
 
+def load_color_data(file_path):
+    """
+    Reads color data from a file and converts LAB values to RGB.
+    Returns a dictionary of colors with their LAB and RGB values.
+    """
+    input_class = Input.instance('.cns')
+    color_data = input_class.read_file(file_path)
+
+    colors = {}
+    for color_name, color_value in color_data.items():
+        lab = np.array(color_value['positive_prototype'])
+        rgb = tuple(map(lambda x: int(x * 255), color.lab2rgb([lab])[0]))
+        colors[color_name] = {"rgb": rgb, "lab": lab}
+    return colors
+
 # Generate a sample palette with synthetic LAB colors
 def generate_sample_palette(n=50):
     return {
@@ -31,9 +47,29 @@ def generate_sample_palette(n=50):
         for i in range(1, n + 1)
     }
 
+# ISCC_NBS color spaces
+def generate_color_space(color_space):
+    if color_space == 1:
+        cs_path = 'ISCC_NBS_BASIC.cns'
+    elif color_space == 2:
+        cs_path = 'ISCC_NBS_EXTENDED.cns'
+    else:
+        cs_path = 'ISCC_NBS_COMPLETE.cns'
+
+    color_space_path = os.path.join(os.getcwd(), 'fuzzy_color_spaces', 'cns', cs_path)
+    colors = load_color_data(color_space_path)
+    
+    lab_only = {
+        name: np.array(data['lab'])
+        for name, data in colors.items()
+        if 'lab' in data
+    }
+    
+    return lab_only
 
 def benchmark_full_color_space_creation():
-    palette = generate_sample_palette()
+    color_space = 1
+    palette = generate_color_space(color_space)
     name = "BenchmarkColorSpaceCreate"
     file_path = os.path.join(os.getcwd(), "fuzzy_color_spaces", f"{name}.fcs")
 
