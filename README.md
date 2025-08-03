@@ -119,16 +119,16 @@ By adjusting the extraction threshold in the fuzzy color space module, users can
 
 This allows users to navigate between abstraction and detailed chromatic analysis with ease.
 
-![Starry Night Over the Rhône](images/Starry%20Night%20Over%20the%20Rhône.jpg)
+![Starry Night Over the Rhône](https://github.com/RafaelConejo/PyFCS_GUI/raw/main/PyFCS/external/images/Starry%20Night%20Over%20the%20Rhône.jpg)
 
 <div style="display:flex; gap: 1em;">
-    <img src="images/van_go3.png" width="45%">
-    <img src="images/van_go2.png" width="45%">
+    <img src="https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/external/images/colors_Starry_Night_2.png" width="45%">
+    <img src="https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/external/images/colors_Starry_Night_1.png" width="45%">
 </div>
 
 In addition, a color map focused exclusively on **yellow tones** was generated to isolate regions of the painting where yellow appears. This highlights features like lamppost reflections and luminous areas.
 
-![Yellow regions highlighted](images/yellow.png)
+![Yellow regions highlighted](https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/external/images/Starry_Night_Yellow.png)
 
 ---
 
@@ -138,9 +138,9 @@ This case study explores Georges Seurat's pointillist painting, composed of fine
 
 This supports deeper analysis in areas like digital art research, color theory, and palette exploration.
 
-![Un dimanche après-midi à l'Ile de la Grande Jatte](images/Un%20dimanche%20après-midi%20à%20l'Ile%20de%20la%20Grande%20Jatte.jpg)
+![Un dimanche après-midi à l'Ile de la Grande Jatte](https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/external/images/Un%20dimanche%20apr%C3%A8s-midi%20%C3%A0%20l'Ile%20de%20la%20Grande%20Jatte.jpg)
 
-![Extracted color palette](images/gama_colores.png)
+![Extracted color palette](https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/external/images/colors_Un_Dimanche.png)
 
 These examples demonstrate the power of PyFCS GUI in enabling detailed color exploration, perceptual clustering, and thematic filtering of image content.
 
