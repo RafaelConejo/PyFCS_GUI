@@ -16,7 +16,7 @@ To assess the usability and perceived quality of the PyFCS GUI, a user study was
 The results were **overall positive**, indicating a high level of user satisfaction and providing empirical support for the system’s usability.
 
 - 📄 The full questionnaire used is available [here](https://forms.gle/pngDqJdYyYyZTRas8).
-- 📊 The collected responses and results can be found [here (CSV format)](https://github.com/RafaelConejo/PyFCS_GUI/blob/main/PyFCS/test/User%20Experience%20Questionnaire%20(UEQ)%20.csv).
+- 📊 The collected responses and results can be found [here (CSV format)](https://github.com/RafaelConejo/PyFCS_GUI/tree/main/PyFCS/test/User%20Experience%20Questionnaire%20(UEQ)).
 
 ---
 
