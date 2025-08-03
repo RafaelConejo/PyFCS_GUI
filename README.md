@@ -91,6 +91,61 @@ chmod +x ./PyFCS/external/setup_pyfcs_mac.sh
 
 ---
 
+## 🔍 Use Cases and Additional Examples
+
+To highlight the flexibility and practical applications of **PyFCS GUI**, the project repository includes a series of **additional case studies** that go beyond the main example featured in the documentation. These examples demonstrate how the tool can be applied in real-world scenarios involving color analysis and perceptual modeling.
+
+While the core functionality is illustrated through a focused scenario, the modular design of PyFCS GUI supports broader applications in areas where nuanced color perception is critical. Key use cases include:
+
+- 🎨 **Digital Art & Palette Design**  
+  Extract dominant tones from artworks or visual prototypes to construct fuzzy color spaces that reflect perceptual transitions between hues.
+
+- 💡 **User Interface Design**  
+  Create adaptive and accessible color themes—such as color-blind-friendly palettes—based on perceptual clustering.
+
+- 🏛️ **Cultural Heritage Restoration**  
+  Compare faded pigments with hypothesized original colors, incorporating uncertainty in chromatic reconstruction through fuzzy modeling.
+
+---
+
+### 🎨 Case Study: *Starry Night Over the Rhône*
+
+This case study demonstrates how PyFCS GUI can be used to extract and analyze the dominant chromatic components of Vincent van Gogh's *Starry Night Over the Rhône*.
+
+By adjusting the extraction threshold in the fuzzy color space module, users can control the level of color granularity:
+
+- **Low threshold:** Identifies the most dominant tones — e.g., 9 representative colors.  
+- **High threshold:** Captures subtle transitions and finer chromatic variations — up to 64 tones.
+
+This allows users to navigate between abstraction and detailed chromatic analysis with ease.
+
+![Starry Night Over the Rhône](images/Starry%20Night%20Over%20the%20Rhône.jpg)
+
+<div style="display:flex; gap: 1em;">
+    <img src="images/van_go3.png" width="45%">
+    <img src="images/van_go2.png" width="45%">
+</div>
+
+In addition, a color map focused exclusively on **yellow tones** was generated to isolate regions of the painting where yellow appears. This highlights features like lamppost reflections and luminous areas.
+
+![Yellow regions highlighted](images/yellow.png)
+
+---
+
+### 🟢 Case Study: *Un dimanche après-midi à l'Ile de la Grande Jatte*
+
+This case study explores Georges Seurat's pointillist painting, composed of fine color dots that create rich chromatic complexity. Using PyFCS GUI with a **high extraction threshold**, a detailed fuzzy color space is generated that captures the artwork’s full color range.
+
+This supports deeper analysis in areas like digital art research, color theory, and palette exploration.
+
+![Un dimanche après-midi à l'Ile de la Grande Jatte](images/Un%20dimanche%20après-midi%20à%20l'Ile%20de%20la%20Grande%20Jatte.jpg)
+
+![Extracted color palette](images/gama_colores.png)
+
+These examples demonstrate the power of PyFCS GUI in enabling detailed color exploration, perceptual clustering, and thematic filtering of image content.
+
+---
+
 ### 📬 Contact & Support
 For support or questions, feel free to contact: rafaconejo@ugr.es
 
