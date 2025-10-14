@@ -2267,6 +2267,7 @@ class PyFCSApp:
         Adds the source image identifier to each color if it doesn't already exist.
         """
         image = self.images[window_id]
+        self.last_window_id = window_id
         if self.FIRST_DBSCAN:
             min_samples=160
         colors, min_samples = utils_structure.get_fuzzy_color_space(image, self.FIRST_DBSCAN, threshold, min_samples)
@@ -2348,6 +2349,13 @@ class PyFCSApp:
                     callback=lambda window_id: [self.recalculate(window_id, colors, threshold, min_samples), popup.destroy()]
                 )
             )
+        
+        elif len(unique_ids) == 0:
+            self.custom_warning(
+                title="Warning",
+                message=f"No colors were detected under this configuration. The last version will be reloaded"
+            )
+            self.get_fuzzy_color_space(self.last_window_id, threshold, min_samples)
 
         else:
             # If there is only one image, recalculate its colors directly
